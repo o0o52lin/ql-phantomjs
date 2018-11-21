@@ -1,0 +1,43 @@
+{
+    "name": "o0o52lin/ql-phantomjs",
+    "description": "QueryList Plugin: Use PhantomJS to crawl Javascript dynamically rendered pages.(headless WebKit) 使用PhantomJS采集JavaScript动态渲染的页面",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "o0o52lin",
+            "email": "qq9028456@gmail.com"
+        }
+    ],
+    "require": {
+        "PHP":">=7.0",
+        "symfony/config": ">=3.4.0",
+        "symfony/dependency-injection": ">=3.4.0",
+        "symfony/filesystem": ">=3.4.0",
+        "symfony/yaml": ">=3.4.0",
+        "twig/twig": "~2.0.0",
+        "jakoch/phantomjs-installer": "2.1.1-p08"
+    },
+    "require-dev": {
+        "jaeger/querylist": "dev-master",
+        "phpunit/phpunit": "^7.0",
+        "zendframework/zendpdf": "~2.0",
+        "smalot/pdfparser": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "QL\\Ext\\": "src"
+        },
+        "classmap": ["src/"]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ],
+        "post-update-cmd": [
+            "PhantomInstaller\\Installer::installPhantomJS"
+        ]
+    }
+}

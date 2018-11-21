@@ -1,0 +1,62 @@
+parameters:
+
+#############################
+### CONFIGURATION OPTIONS ###
+#############################
+
+    phantomjs.cache_dir: /tmp
+    phantomjs.procedure_dir: "%phantomjs.resource_dir%/procedures"
+    phantomjs.procedure_extension: proc
+    phantomjs.validator_dir: "%phantomjs.resource_dir%/validators"
+    phantomjs.validator_engine: "esprima-2.0.0.js"
+
+##############
+### ENGINE ###
+##############
+
+    phantomjs.engine.class: o0o\PhantomJs\Engine
+
+##################
+### PROCEDURES ###
+##################
+
+    phantomjs.procedure.procedure_loader.class: o0o\PhantomJs\Procedure\ProcedureLoader
+    phantomjs.procedure.chain_loader.class: o0o\PhantomJs\Procedure\ChainProcedureLoader
+    phantomjs.procedure.procedure_factory.class: o0o\PhantomJs\Procedure\ProcedureFactory
+    phantomjs.procedure.procedure_loader_factory.class: o0o\PhantomJs\Procedure\ProcedureLoaderFactory
+    phantomjs.procedure.procedure_validator.class: o0o\PhantomJs\Procedure\ProcedureValidator
+    phantomjs.procedure.procedure_compiler.class: o0o\PhantomJs\Procedure\ProcedureCompiler
+
+############
+### HTTP ###
+############
+
+    phantomjs.http.message_factory.class: o0o\PhantomJs\Http\MessageFactory
+
+################
+### PARSING ####
+################
+
+    phantomjs.parser.json_parser.class: o0o\PhantomJs\Parser\JsonParser
+
+###################
+### VALIDATION ####
+###################
+
+    phantomjs.validator.esprima.class: o0o\PhantomJs\Validator\Esprima
+
+##################
+### TEMPLATES ####
+##################
+
+    phantomjs.template.template_renderer.class: o0o\PhantomJs\Template\TemplateRenderer
+    phantomjs.twig.environment.class: Twig_Environment
+    phantomjs.twig.lexer.class: Twig_Lexer
+    phantomjs.twig.array_loader.class: Twig_Loader_Array
+
+##################
+### RESOURCES ####
+##################
+
+    phantomjs.cache.file_cache.class: o0o\PhantomJs\Cache\FileCache
+    phantomjs.loader.file_locator.class: Symfony\Component\Config\FileLocator
