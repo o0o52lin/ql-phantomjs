@@ -54,6 +54,10 @@ class PhantomJs implements PluginContract
         $queryList->console = $response->getConsole();
 
         if($debug){
+        	\Log::info('debug: getLog↓');
+        	\Log::info($client->getLog());
+        	\Log::info('debug: getConsole↓');
+        	\Log::info($response->getConsole());
             print_r($client->getLog());
             print_r($queryList->console);
         }
